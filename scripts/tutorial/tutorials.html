@@ -1,0 +1,21 @@
+﻿<div class="page">
+    <div class="content">
+
+        <div class="col-xs-7">
+            <div class="tutorial-small" ng-repeat="tutorial in tutorials"
+                 ng-click="showTutorialDescription(tutorial.id)">
+
+	            <button class="btn"
+	                    ng-click="go('/tutorial/' + tutorial.id);">
+		            {{'txtRead' | translate}}
+	            </button>
+            </div>
+        </div>
+
+
+
+	    <div class="col-xs-5 tutorial-small-description">
+            
+        </div>
+    </div>
+</div>

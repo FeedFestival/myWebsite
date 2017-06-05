@@ -1,0 +1,46 @@
+﻿<div style="display: table;">
+    <div class="p-question-user-img">
+        <div>
+            <i ng-show="question.User.isAnonymous"
+               class="fa fa-question" aria-hidden="true"></i>
+            <img ng-show="!question.User.isAnonymous" />
+        </div>
+    </div>
+
+    <div class="p-question-info">
+        <label class="p-question-user-name">
+            {{question.User.Name}} :
+        </label>
+        <p class="p-question-content">
+            {{question.Content}}
+        </p>
+    </div>
+</div>
+
+<div style="padding-left: 100px;">
+
+    <div ng-repeat="answer in question.Answers"
+         class="p-answer-container">
+        <div class="p-question-user-img">
+            <div>
+                <i ng-show="question.User.isAnonymous"
+                   class="fa fa-question" aria-hidden="true"></i>
+                <img ng-show="!question.User.isAnonymous" />
+            </div>
+        </div>
+        <div class="p-question-info">
+            <label class="p-question-user-name">
+                {{answer.User.Name}} :
+            </label>
+            <p class="p-question-content p-answer-content">
+                {{answer.Content}}
+            </p>
+        </div>
+    </div>
+
+    <questions-and-answers class="p-question-container"
+                           ng-if="question.QuestionsCount > 0"
+                           ng-repeat="q in question.Questions"
+                           question-id="{{q.id}}">
+    </questions-and-answers>
+</div>

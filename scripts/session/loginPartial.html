@@ -1,0 +1,39 @@
+﻿<div class="account-container">
+    <div class="col-xs-12">
+        <div class="form-container">
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <span class="fa fa-envelope-o"></span>
+                            <input type="text" class="form-control input-lg" placeholder="{{'txtEmail'| translate}}" data-ng-model="newSession.UserName">
+                        </div>
+                        <div class="form-group">
+                            <span class="fa fa-lock"></span>
+                            <input type="password" class="form-control input-lg" placeholder="{{'txtPassword'| translate}}" data-ng-model="newSession.Password">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-xs-12 text-center">
+        <a class="click text-color-white" data-ng-click="go('/forgotPassword')">{{'txtForgotPassword' | translate}}</a>
+    </div>
+
+    <div class="col-xs-12 login-but">
+        <!--<button class="btn btn-primary text-center" data-ng-click="loginIntern()">{{'txtLogin'| translate}}</button>-->
+        <button class="btn btn-primary text-center" data-ng-click="newSession.UserName = 'mpe@f5it.ro'; newSession.Password = 'fire4test'; loginIntern();">{{'txtLogin'| translate}}</button>
+    </div>
+    <div class="col-xs-12 text-center inline">
+        <div class="OR-text">
+            <span class="pull-left"></span>
+            <strong>OR</strong>
+            <span class="pull-right"></span>
+        </div>
+    </div>
+    <div class="col-xs-12 classic-buttons" style="padding-top: 50px;">
+        <button class="btn btn-classic text-center" data-ng-click="signup()">{{'txtGetStarted'| translate}}</button>
+    </div>
+</div>

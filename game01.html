@@ -1,0 +1,95 @@
+﻿<!doctype html>
+<html lang="en" data-ng-app="FeedFestStudio">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>FFs</title>
+
+    <link href="css/base.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/game.css" rel="stylesheet" />
+    <!--<link href="css/main.css" rel="stylesheet" />-->
+
+    <!--<link rel="shortcut icon" href="TemplateData/favicon.ico" />-->
+    <script src="TemplateData/UnityProgress.js"></script>
+
+    <script src="dist/libs.js"></script>
+
+    <!--<script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/angular/angular.js"></script>
+    <script src="js/angular/angular-route.min.js"></script>
+    <script src="js/ngFacebook.js"></script>
+    <script src="js/aws-sdk.js"></script>
+    <script src="js/angular/angular-translate.min.js"></script>
+    <script src="js/angular/angular-translate-loader-static-files.min.js"></script>
+    <script src="js/ui-bootstrap-tpls-1.3.2.min.js"></script>
+    <script src="js/angular/ngStorage.js"></script>-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body ng-controller="gameSessionController" class="static-app"
+      data-ng-cloak>
+    <!--<div id="amazon-root"></div>-->
+
+    <div data-ng-controller="TranslateCtrl">
+
+        <!--    Header Options  -->
+        <section class="header-fixed game-header-container"
+                 data-ng-include="'scripts/menu/header.html'"></section>
+
+        <div class="game-view">
+            <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"
+                    height="{{gameHeight}}" width="{{gameWidth}}"></canvas>
+
+            <!--<div ng-if="app.showFullScreen" class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>-->
+        </div>
+
+        <div class="right-commercial-area">
+            <div class="game-commercial vertical-rectangle">
+
+            </div>
+            <div class="game-commercial square-popup"
+                 data-ng-show="app.showSquarePopupAdd == true">
+
+            </div>
+        </div>
+
+        <div class="bottom-commercial-area">
+            <div class="game-commercial leader-board">
+
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript'>
+        var Module = {
+            TOTAL_MEMORY: 268435456,
+            errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+            compatibilitycheck: null,
+            dataUrl: "Release/_Defector.data",
+            codeUrl: "Release/_Defector.js",
+            memUrl: "Release/_Defector.mem",
+        };
+
+        function setGameReady() {
+            window.gameIsReady = true;
+        };
+    </script>
+    <script src="Release/UnityLoader.js"></script>
+
+    <!--    FeedFestStudio -->
+    <script src="app.js"> </script>
+
+    <script src="scripts/services_directives/services.js"></script>
+    <script src="scripts/services_directives/directives.js"></script>
+
+    <script src="scripts/session/gameSessionController.js"></script>
+    <script src="scripts/session/sessionFactory.js"></script>
+    
+    <script src="scripts/home/homeController.js"></script>
+    <script src="scripts/tutorial/tutorialController.js"></script>
+    <script src="scripts/game/gameController.js"></script>
+</body>
+</html>

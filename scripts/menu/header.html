@@ -1,0 +1,74 @@
+﻿<header class="clearfix">
+
+    <!--    Hamburger   -->
+    <div class="col-xs-1 click header-button">
+	    <img class="logo" src="img/logo.png"
+            ng-click="go('/home');"/>
+    </div>
+
+    <!--    Menu    -->
+    <div ng-if="!app.isPlayingGame"
+        class="col-xs-9 top-menu" data-ng-controller="menuController"
+        data-ng-include="'scripts/menu/menu.html'">
+    </div>
+
+    <!--    Facebook    -->
+    <div class="col-xs-1 click header-button"
+         style="display:none;"
+        ng-show="!app.isPlayingGame"
+        ng-click="loginWithFacebook()"
+        ng-class="(app.isLoggedIn()) ? 'header-login' : 'header-login-button'">
+
+        <label class="click" ng-show="!app.isLoggedIn()">
+            {{'txtLogin' | translate}}
+        </label>
+        <i class="fa fa-facebook-official"
+            ng-show="!app.isLoggedIn()"></i>
+
+        <img class="col-xs-4"
+            ng-src="{{loggedUser.picture}}"
+            ng-show="app.isLoggedIn()" />
+        <div class="col-xs-8"
+            ng-show="app.isLoggedIn()">
+            <label class="click col-xs-12">
+                {{loggedUser.name}}
+            </label>
+
+            <button class="btn btn-round col-xs-6">
+                <i class="fa fa-envelope"></i>
+            </button>
+
+            <button class="btn btn-round col-xs-6"
+                ng-click="logout()">
+                <i class="fa fa-power-off"></i>
+            </button>
+        </div>
+    </div>
+
+    <!--<div class="col-xs-1 click header-button"-->
+    <!--ng-show="!app.isPlayingGame && !app.facebookConnected">-->
+    <!--<div id="load">-->
+    <!--<div>G</div>-->
+    <!--<div>N</div>-->
+    <!--<div>I</div>-->
+    <!--<div>D</div>-->
+    <!--<div>A</div>-->
+    <!--<div>O</div>-->
+    <!--<div>L</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="col-xs-10" style="width: 80%;"
+        ng-if="app.isPlayingGame">
+    </div>
+
+    <div class="col-xs-1 click header-button exit-game"
+        ng-show="app.isPlayingGame"
+        ng-click="exitGame();">
+        <label class="click">
+            {{'txtExitGame' | translate}}
+            <i class="fa fa-times-circle-o"></i>
+        </label>
+    </div>
+
+</header>

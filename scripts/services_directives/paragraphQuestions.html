@@ -1,0 +1,62 @@
+﻿<div class="p-options">
+    <div style="display:table;height: 28px;">
+
+        <button class="btn p-question" ng-if="paragraph.Questions && paragraph.Questions.length > 0"
+                ng-class="(paragraph.expandQuestions) ? 'btn-expand-options' : ''"
+                ng-click="expandOptions(paragraph, 0)">
+            {{'txtQuestions' | translate}} {{paragraph.Questions.length}}
+        </button>
+        <button class="btn p-answer" ng-if="paragraph.answersCount > 0"
+                ng-class="(paragraph.expandAnswers) ? 'btn-expand-options' : ''"
+                ng-click="expandOptions(paragraph, 1)">
+            {{'txtAnswers' | translate}} {{paragraph.answersCount}}
+        </button>
+
+        <button class="btn p-question" ng-if="!paragraph.Questions"
+                ng-class="(paragraph.expandQuestions) ? 'btn-expand-options' : ''"
+                ng-click="expandOptions(paragraph, 2)">
+            {{'txtPostQuestion' | translate}}
+        </button>
+    </div>
+
+    <div class="p-expanded-area"
+         ng-class="(paragraph.expandAnswers) ? 'p-expanded-area-answers':''"
+         ng-if="paragraph.Questions.length > 0 && paragraph.expandQuestions || paragraph.expandAnswers">
+
+        <questions-and-answers class="p-question-container"
+                               ng-if="paragraph.expandQuestions"
+                               ng-repeat="q in paragraph.Questions"
+                               question-id="{{q.id}}">
+        </questions-and-answers>
+
+        <div class="p-question-container"
+             ng-if="paragraph.expandAnswers"
+             ng-repeat="q in paragraph.answeredQuestions">
+
+            <div class="p-question-info">
+                <p class="p-question-content p-question-answered">
+                    {{q.Content}}
+                </p>
+            </div>
+
+            <div ng-repeat="answer in q.Answers"
+                 class="p-answer-container">
+                <div class="p-question-user-img">
+                    <div>
+                        <i ng-show="q.User.isAnonymous"
+                           class="fa fa-question" aria-hidden="true"></i>
+                        <img ng-show="!q.User.isAnonymous" />
+                    </div>
+                </div>
+                <div class="p-question-info">
+                    <label class="p-question-user-name">
+                        {{answer.User.Name}} :
+                    </label>
+                    <p class="p-question-content p-answer-content">
+                        {{answer.Content}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

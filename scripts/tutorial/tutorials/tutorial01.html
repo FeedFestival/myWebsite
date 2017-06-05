@@ -1,0 +1,210 @@
+﻿<div class="content">
+
+    <div class="content-section">
+
+        <div class="p-title">
+            <div>
+                {{tutorial.Paragraphs[0].Name}}
+            </div>
+        </div>
+        <div class="col-xs-7">
+            <p>
+                This is my way of making a building in Blender 3D.
+                In this tutorial I'm not going through the process of modelling one,
+                there are plenty of tutorials out there on this subject.
+            </p>
+            <p>
+                First we create the building.
+            </p>
+        </div>
+
+        <div class="col-xs-5 ref-image ref-line-top">
+            <div class="col-xs-12">
+                <img class="click" ng-click="openImage('http://imgur.com/YeRWMTf')" src="http://i.imgur.com/YeRWMTf.png" title="source: imgur.com" />
+                <div>
+                    Title
+                </div>
+            </div>
+        </div>
+
+        <paragraph-questions paragraph="{{tutorial.Paragraphs[0].id}}"></paragraph-questions>
+    </div>
+
+    <div class="content-section">
+
+        <div class="p-title">
+            <div>
+                {{tutorial.Paragraphs[1].Name}}
+            </div>
+        </div>
+
+        <div class="col-xs-7">
+            <p>
+                When we look around us in the world, we see objects, and we associate names for those objects.
+                As we grow, we recognise objects because of the details that compose them.
+                Objects in the real world have <b>information</b> that our brains decode.
+                Im going to use the word <b>information</b> for everything we add to this pile of lines
+                and faces that makes it look more like a building and not the sketch of a building.
+            </p>
+            <p>
+                Ambient occlusion can create <b>information</b> by mapping on the object's faces shadows,
+                based on the object surface.
+            </p>
+        </div>
+
+        <div class="col-xs-12 ref-image ref-line-top">
+            <div class="col-xs-4">
+                <img class="click" ng-click="openImage('http://imgur.com/Nb991fe')" src="http://i.imgur.com/Nb991fe.png" title="source: imgur.com" />
+                <div>
+                    Title
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <img class="click" ng-click="openImage('http://imgur.com/23VLDW5')" src="http://i.imgur.com/23VLDW5.png" title="source: imgur.com" />
+                <div>
+                    Title
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <img class="click" ng-click="openImage('http://imgur.com/Mde9FSz')" src="http://i.imgur.com/Mde9FSz.png" title="source: imgur.com" />
+                <div>
+                    Title
+                </div>
+            </div>
+        </div>
+
+        <paragraph-questions paragraph="{{tutorial.Paragraphs[1].id}}"></paragraph-questions>
+    </div>
+
+    <div class="content-space-4"></div>
+
+    <div class="content-section">
+
+        <div class="p-title">
+            <div>
+                {{tutorial.Paragraphs[2].Name}}
+            </div>
+        </div>
+
+        <div class="col-xs-7">
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+        </div>
+
+        <div class="col-xs-8 ref-image ref-line-top single-row">
+            <div class="col-xs-6">
+                <img class="click" ng-click="openImage('http://imgur.com/0HrCDX5')" src="http://i.imgur.com/0HrCDX5.png" title="source: imgur.com" />
+                <div>
+                    Original texture
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <img class="click" ng-click="openImage('http://imgur.com/MaePbUG')" src="http://i.imgur.com/MaePbUG.png" title="source: imgur.com" />
+                <div>
+                    Desaturated texture
+                </div>
+            </div>
+        </div>
+
+        <div class="content-space-2"></div>
+
+        <div class="col-xs-7">
+            <p>
+                4. Let's apply a filter to the image. Select Cutout from the Filter Gallery.
+            </p>
+        </div>
+
+        <div class="col-xs-8 no-padding-horizontal single-row ref-line-top">
+
+            <div class="col-xs-4 ref-image ref-auto">
+                <div class="col-xs-12">
+                    <img class="click" ng-click="openImage('http://imgur.com/mEXOHcS')" src="http://i.imgur.com/mEXOHcS.png" title="source: imgur.com" />
+                    <div>
+                        Original texture
+                    </div>
+                </div>
+                <i class="fa fa-arrow-circle-o-right arrow"></i>
+            </div>
+            <div class="col-xs-6 ref-image pull-right">
+                <div class="col-xs-12">
+                    <img class="click" ng-click="openImage('http://imgur.com/iScxH8k')" src="http://i.imgur.com/iScxH8k.png" title="source: imgur.com" />
+                    <div>
+                        Original texture
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-space-2"></div>
+        <div class="col-xs-7">
+            <p>
+                5. Draw a white box near the lightest part of the image.
+            </p>
+        </div>
+        <div class="col-xs-8 no-padding-horizontal">
+            <div class="col-xs-6 ref-image ref-line-top">
+                <div class="col-xs-12">
+                    <img class="click" ng-click="openImage('http://imgur.com/PFiUrDh')" src="http://i.imgur.com/PFiUrDh.png" title="source: imgur.com" />
+                    <div>
+                        Original texture
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-space-2"></div>
+        <div class="col-xs-7">
+            <p>
+                6. Try to make the image as light as possible using the white box as the refrence.
+            </p>
+        </div>
+
+        <div class="col-xs-8 no-padding-horizontal single-row ref-line-top">
+
+            <div class="col-xs-4 ref-image ref-auto">
+                <div class="col-xs-12">
+                    <img class="click" ng-click="openImage('http://imgur.com/2MLekUc')" src="http://i.imgur.com/2MLekUc.png" title="source: imgur.com" />
+                    <div>
+                        Original texture
+                    </div>
+                </div>
+                <i class="fa fa-arrow-circle-o-right arrow"></i>
+            </div>
+            <div class="col-xs-6 ref-image pull-right">
+                <div class="col-xs-12">
+                    <img class="click" ng-click="openImage('http://imgur.com/MyiA8zN')" src="http://i.imgur.com/MyiA8zN.png" title="source: imgur.com" />
+                    <div>
+                        Original texture
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-space-2"></div>
+        <div class="col-xs-7">
+            <p>
+                7. Now you can toy arround with it to make it look more like what you want.
+                I opt for a more Oil Painting style. Below is a list where you can learn the
+                secrets of the trade, the power of the Filter Gallery, the Noise of Remove Noise!
+            </p>
+        </div>
+
+        <div class="col-xs-6 no-padding-horizontal single-row ref-line-top">
+
+            <div class="col-xs-12 ref-image">
+                <div class="col-xs-12">
+                    <img class="click" ng-click="openImage('http://imgur.com/1rgmW9Y')" src="http://i.imgur.com/1rgmW9Y.png" title="source: imgur.com" />
+                    <div>
+                        Original texture
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <paragraph-questions paragraph="{{tutorial.Paragraphs[2].id}}"></paragraph-questions>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+﻿<div class="page">
+    <div class="content">
+
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
+            <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4"
+                 ng-repeat="game in games">
+
+                <div class="game-list-container">
+
+                    <div class="game-list-image">
+
+                    </div>
+
+                    <div class="game-list-options">
+
+                        <button class="btn"
+                                ng-if="game.Type != 'GP'"
+                                ng-click="playGame(game);"
+                                ng-class="getButtonClass(game.Type);">
+
+                            <i ng-if="game.Type == 'S'"
+                               class="fa fa-steam" aria-hidden="true"></i>
+                            <span ng-if="game.Type == 'S'">
+                                DOWNLOAD
+                            </span>
+
+                            <span ng-if="game.Type == 'O'">
+                                PLAY NOW
+                            </span>
+
+                        </button>
+                        <span ng-if="!app.isLoggedIn() && game.Type == 'O'"
+                              class="warning">
+                            * Requires login
+                        </span>
+
+                        <a ng-if="game.Type == 'GP'"
+                           class="btn-google-play"
+                           href="https://play.google.com/">
+                            <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" 
+                                alt="Get it on Google Play" border="0">
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-xs-4">
+
+        </div>
+
+    </div>
+</div>

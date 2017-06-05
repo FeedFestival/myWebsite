@@ -1,0 +1,332 @@
+html {
+  overflow: auto; }
+
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 7px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.66);
+  box-shadow: 0 4px 15px black; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #e46315;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 0, 0, 0.4); }
+
+html {
+  font-family: "Open Sans", sans-serif !important; }
+
+*:focus {
+  outline: none !important; }
+
+btn:focus, a:focus {
+  outline: none !important; }
+
+body {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 1.5em !important;
+  background-image: url("../img/wall.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /**/
+  -webkit-transition: all 2s !important;
+  transition: all 2s !important; }
+  body .btn > span {
+    color: #b6c8cd;
+    font-weight: inherit; }
+  body i {
+    color: #7f8d91; }
+  body p {
+    color: #7f8d91; }
+
+a {
+  outline: 0 !important; }
+
+input {
+  outline: 0 !important; }
+
+.btn:focus, .btn:active:focus {
+  outline: none; }
+
+.click {
+  cursor: pointer;
+  cursor: hand; }
+
+.inline {
+  display: inline-block; }
+
+.center-div {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.no-padding-horizontal {
+  padding-left: 0;
+  padding-right: 0; }
+
+.no-padding-right {
+  padding-right: 0; }
+
+.no-padding-left {
+  padding-left: 0; }
+
+.round-padding-5 {
+  padding: 5px; }
+
+.round-padding-15 {
+  padding: 15px; }
+
+.m-leftright-33 {
+  margin-left: 33px;
+  margin-right: 33px; }
+
+.m-bot-10 {
+  margin-bottom: 10px; }
+
+.m-bot-15 {
+  margin-bottom: 15px; }
+
+/*
+
+  Resize
+
+------------------------------------------------------------------------------------------------
+*/
+html, body, header, .header-button, .top-menu, .menu-block {
+  height: 100%; }
+
+header {
+  width: 100%; }
+  header .header-button {
+    width: 16%; }
+  header .top-menu {
+    width: 68%; }
+
+.ref-image > div > div {
+  font-size: 13px; }
+
+.arrow {
+  font-size: 75px; }
+
+.p-options .btn {
+  font-size: 12px; }
+
+.exit-game {
+  font-size: 18px !important; }
+  .exit-game > label > i {
+    font-size: 36px; }
+
+.game-header-container {
+  height: 44px; }
+
+.game-header-container header {
+  height: 44px; }
+
+.main-container .page {
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%; }
+  .main-container .page .content {
+    width: 100%; }
+
+.game-list-container {
+  height: 300px; }
+
+@media (min-width: 1440px) and (max-width: 2400px) {
+  .header-button {
+    font-size: 23px;
+    padding: 17px 10px; }
+  .header-login-button {
+    padding-top: 25px;
+    padding-bottom: 25px; } }
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+  .header-button {
+    font-size: 23px;
+    padding: 17px 10px; }
+  .header-login-button {
+    padding-top: 25px;
+    padding-bottom: 25px; }
+  .menu-block {
+    width: 20% !important;
+    height: 100%; }
+  .main-container .page {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%; }
+  .game-list-container {
+    height: 240px; } }
+
+@media (min-width: 1024px) and (max-width: 1340px) {
+  header {
+    width: 100%; }
+    header .header-button {
+      height: 100%;
+      width: 20%;
+      font-size: 23px;
+      padding: 17px 10px; }
+    header .header-login-button {
+      padding-top: 25px !important;
+      padding-bottom: 25px !important; }
+    header .top-menu {
+      height: 100%;
+      width: 60% !important; }
+    header .menu-block {
+      width: 33%;
+      height: 100%; }
+  .main-container .page {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%; } }
+
+/*
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  header {
+    width: 100%; }
+    header .header-button {
+      height: 100%;
+      width: 20%;
+      padding: 15px 10px; }
+    header .header-login-button {
+      padding-top: 20px;
+      padding-bottom: 20px; }
+    header .header-login {
+      padding: 5px 0; }
+      header .header-login > img {
+        width: 50px;
+        float: left; }
+      header .header-login > div > label {
+        font-size: 15px; }
+    header .top-menu {
+      height: 100%;
+      width: 60% !important; }
+    header .menu-block {
+      width: 33%;
+      height: 100%;
+      padding-top: 10px; } }
+
+@media (min-width: 480px) and (max-width: 768px) {
+  header {
+    width: 100%;
+    height: 60px; }
+    header .header-button {
+      height: 100%;
+      width: 13%;
+      padding: 15px 10px; }
+    header .header-login-button {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      width: 27%; }
+    header .header-login {
+      padding: 8px 0;
+      width: 27%; }
+      header .header-login > img {
+        width: 44px;
+        float: left; }
+      header .header-login > div {
+        display: table;
+        text-align: center; }
+        header .header-login > div > label {
+          display: inline-table;
+          font-size: 13px;
+          float: left;
+          width: 100%; }
+        header .header-login > div > .btn-round {
+          display: table-column-group; }
+    header .menu-block {
+      width: 33%;
+      height: 100%;
+      padding-top: 15px; }
+  .col-xs-12 {
+    padding: 0 !important; }
+  .col-xs-4 {
+    padding: 0 5px !important; }
+  .game-list-container {
+    height: 244px; } }
+
+@media (min-width: 520px) and (max-width: 768px) {
+  .top-menu {
+    height: 100%;
+    width: 60% !important; } }
+
+@media (min-width: 480px) and (max-width: 520px) {
+  .top-menu {
+    width: 58% !important; }
+  .header-login {
+    width: 29% !important; } }
+
+@media (min-width: 1024px) and (max-width: 2400px) {
+  header {
+    height: 84px; }
+    header .header-login {
+      padding: 16px 0; }
+      header .header-login > img {
+        width: 50px;
+        float: left; }
+      header .header-login > div > label {
+        font-size: 15px; }
+  .header-container {
+    height: 300px; }
+  .content {
+    padding: 15px; }
+  .btn-play-online {
+    margin-top: 15px;
+    font-size: 16px !important; }
+  .menu-block .btn {
+    font-size: 19px; } }
+
+@media (min-width: 480px) and (max-width: 1024px) {
+  header {
+    height: 60px; }
+  .header-container {
+    height: 230px; }
+  .main-container {
+    padding: 0 !important; }
+    .main-container .page {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%; }
+  .content {
+    padding: 15px 10px; }
+  .btn-play-online {
+    margin-top: 10px;
+    font-size: 11px !important; }
+  .menu-block .btn {
+    font-size: 12px; } }
+
+@media (min-width: 1px) and (max-width: 480px) {
+  .main-container, .header-container {
+    display: none; }
+  .rez-disclaimer {
+    display: block;
+    text-align: center;
+    margin-top: 50%; }
+    .rez-disclaimer > p {
+      color: bisque;
+      font-size: inherit; } }
+
+@media (min-width: 480px) and (max-width: 2400px) {
+  .rez-disclaimer {
+    display: none; } }

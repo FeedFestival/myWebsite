@@ -1,0 +1,35 @@
+{
+  "txtEmail": "E-post",
+  "txtPassword": "Passord",
+  "txtLogin": "Logheaza-te",
+  "txtGetStarted": "Kom i gang",
+  "txtSignup": "Registrer deg",
+  "txtUpdate": "Oppdater",
+
+  "txtAccountSettings": "Kontoinnstillinger",
+
+  "txtDetails": "Detaljer",
+
+  "txtFarmName": "Farm Name",
+  "txtFirstName": "Fornavn",
+  "txtLastName": "Etternavn",
+  "txtUsername": "Brukernavn",
+  "txtAddress": "Adresse",
+  "txtPostalCode": "Post Nummer",
+  "txtPhone": "Telefon",
+  "txtCountry": "Land",
+
+  "txtNewPassword": "Nytt passord",
+  "txtConfirmPassword": "Bekreft passord",
+
+  "txtHome": "Hjem",
+  "txtField": "Feltet",
+  "txtSize": "Størrelse",
+
+  "txtForgotPassword": "Glemt passordet?",
+  "txtForgotPasswordInfo": "Vi vil sende en e-post med et nytt passord til e-forbundet med dette Brukernavnet.",
+  "txtSend": "Sende",
+  "txtCancel": "Kansellere",
+
+  "txtAllreadyHaveAnAccountQ": "Har du allerede en konto?"
+}

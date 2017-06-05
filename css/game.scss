@@ -1,0 +1,208 @@
+.static-app {
+  overflow-y: hidden;
+  overflow-x: visible;
+  > div {
+    height: 100%;
+  }
+}
+
+.game-header-container {
+  .header-button {
+    padding: 6px 20px;
+    width: auto;
+    font-size: 15px;
+    text-align: center;
+    img {
+      height: 33px;
+    }
+  }
+
+  .exit-game {
+    width: 194px !important;
+    float: right !important;
+
+    > label {
+      margin-top: 3px;
+      display: inline-block;
+
+      > i {
+        position: absolute;
+        bottom: 2px;
+        right: 12px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.game-view {
+  margin-top: 10px;
+  display: inline-block;
+  border: 2px solid rgba(0,0,0,0.0);
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: -1px 4px 37px -1px rgba(0, 0, 0, 0.63);
+  -moz-box-shadow: -1px 4px 37px -1px rgba(0, 0, 0, 0.63);
+  box-shadow: -1px 4px 37px -1px rgba(0, 0, 0, 0.63);
+  canvas {
+    margin: 0;
+    position: relative;
+  }
+}
+
+.fullscreen {
+  width: 38px;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  left: 1px;
+}
+
+header {
+  background-color: rgba(0,0,0,0.4);
+  border-bottom-color: #e5e5e5;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  display: inline-block;
+  -webkit-border-image: -webkit-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
+  -o-border-image: -o-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
+  -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
+  box-shadow: 0 3px 30px black;
+
+  .header-button {
+    text-align: center;
+  }
+}
+
+.right-commercial-area, .bottom-commercial-area {
+  float: left;
+  padding: 15px;
+
+  .game-commercial {
+    background-color: rgba(0,0,0,0);
+    -webkit-box-shadow: -1px 4px 37px -1px rgba(0,0,0,0.63);
+    -moz-box-shadow: -1px 4px 37px -1px rgba(0,0,0,0.63);
+    box-shadow: -1px 4px 37px -1px rgba(0,0,0,0.63);
+  }
+
+  .vertical-rectangle {
+    height: 400px;
+    width: 240px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+  }
+
+  .square-popup {
+    height: 250px;
+    width: 250px;
+  }
+
+  .leader-board {
+    height: 90px;
+    width: 728px;
+    margin: auto;
+  }
+}
+
+.game-view {
+  float: left;
+  display: inline-block;
+}
+
+@media (min-width: 1792px) and (max-width: 1920px) {
+
+  .game-view {
+    margin-left: 22px;
+    width: 1284px;
+    height: 724px;
+  }
+
+  .bottom-commercial-area {
+    margin-left: 22px;
+    width: 1284px;
+  }
+
+  body {
+    min-width: 1920px;
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 1792px) {
+
+  .game-view {
+    margin-left: 44px;
+    width: 1284px;
+    height: 724px;
+  }
+
+  .bottom-commercial-area {
+    margin-left: 44px;
+    width: 1284px;
+  }
+
+  body {
+    min-width: 1792px;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1536px) {
+
+  .game-view {
+    margin-left: 44px;
+    width: 1156px;
+    height: 652px;
+  }
+
+  .bottom-commercial-area {
+    margin-left: 44px;
+    width: 1156px;
+  }
+
+  body {
+    min-width: 1536px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1366px) {
+
+  .game-view{
+    margin-left: 44px;
+    width: 1028px;
+    height: 580px;
+  }
+
+  .bottom-commercial-area {
+    margin-left: 44px;
+    width: 1028px;
+  }
+
+  body {
+    min-width: 1366px;
+  }
+}
+
+@media (min-width: 1008px) and (max-width: 1280px) {
+
+  .game-view{
+    margin-left: 11px;
+    width: 980px;
+    height: 553px;
+  }
+
+  .bottom-commercial-area {
+    margin-left: 11px;
+    width: 980px;
+  }
+
+  body {
+    min-width: 1280px;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 1008px) {
+
+  body{
+    display: none;
+  }
+}

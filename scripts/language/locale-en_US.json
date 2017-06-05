@@ -1,0 +1,48 @@
+{
+  "txtEmail": "Email",
+  "txtPassword": "Password",
+  "txtLogin": "Login",
+  "txtGetStarted": "Get Started",
+  "txtSignup": "Sign Up",
+  "txtUpdate": "Update",
+
+  "txtAccountSettings": "Account Settings",
+
+  "txtDetails": "Details",
+
+  "txtFarmName": "Farm Name",
+  "txtFirstName": "First Name",
+  "txtLastName": "Last Name",
+  "txtUsername": "Username",
+  "txtAddress": "Address",
+  "txtPostalCode": "Postal Code",
+  "txtPhone": "Phone",
+  "txtCountry": "Country",
+
+  "txtNewPassword": "New Password",
+  "txtConfirmPassword": "Confirm Password",
+
+  "txtNews": "News",
+  "txtTutorials": "Tutorials",
+  "txtGames": "Games",
+  "txtField": "Field",
+  "txtSize": "Size",
+
+  "txtRead": "Read",
+
+  "txtQuestions": "Questions",
+  "txtAnswers": "Answers",
+
+  "txtPostQuestion": "Post a question",
+
+  "txtExitGame": "Exit Game",
+
+  "txtForgotPassword": "Forgot your password?",
+  "txtForgotPasswordInfo": "We will send an email with a new password to the email asociated with this Username.",
+  "txtSend": "Send",
+  "txtCancel": "Cancel",
+
+  "txtAllreadyHaveAnAccountQ": "Already have an account?",
+  "txtWorkflow": "Workflow",
+  "txtPortfolio": "Portfolio"
+}
