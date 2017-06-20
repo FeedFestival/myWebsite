@@ -27,10 +27,34 @@
         factory.setupApp = function () {
             var deferred = $q.defer();
             $http.get(AppData
-            ).success(function (data) {
+            )
+            .then(function(data) {
                 deferred.resolve(data);
+            }, function (err) {
+                console.error(err);
             });
+
             return deferred.promise;
+
+            //var deferred = $q.defer();
+
+            //$http({
+            //    method: 'GET',
+            //    url: AppData,
+            //    headers: {
+            //        'Content-Type': 'application/x-www-form-urlencoded',
+            //        'Access-Control-Allow-Origin': '*',
+            //        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            //        'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With, origin, authorization, accept, client-security-token',
+            //        'Access-Control-Allow-Credentials': 'false'
+            //    }
+            //}).then(function successCallback(data) {
+            //    deferred.resolve(data);
+            //}, function errorCallback(response) {
+            //    deferred.reject('Error occured' + response);
+            //    console.error(response.data.Error);
+            //});
+            //return deferred.promise;
         };
 
         factory.login = function (user_id) {

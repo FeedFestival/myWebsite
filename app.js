@@ -25,15 +25,15 @@ var app = angular.module('FeedFestStudio', ['ngRoute'
                                      , 'ngStorage'
 ]);
 
-app.config(['$routeProvider', '$httpProvider', '$facebookProvider',
-    function ($routeProvider, $httpProvider, $facebookProvider) {
+app.config(['$routeProvider', '$httpProvider', '$facebookProvider', '$locationProvider',
+    function ($routeProvider, $httpProvider, $facebookProvider, $locationProvider) {
 
     $httpProvider.defaults.withCredentials = true;
 
     $facebookProvider.setAppId('1193283007398999');
     $facebookProvider.setVersion("v2.2");
 
-    $routeProvider.when('/home', {
+    $routeProvider.when('/', {
         templateUrl: 'scripts/home/home.html',
         controller: 'homeController'
     });
@@ -66,7 +66,10 @@ app.config(['$routeProvider', '$httpProvider', '$facebookProvider',
         controller: 'gamesController'
     });
     
-    $routeProvider.otherwise({ redirectTo: '/home' });
+    $routeProvider.otherwise({ redirectTo: '/' });
+
+    // use the HTML5 History API
+    //$locationProvider.html5Mode(true);
 
     //$httpProvider.interceptors.push(function ($q, $location, sessionInformationService) {
     //    return {
@@ -209,7 +212,7 @@ app.controller('TranslateCtrl', ['$scope', '$route', function ($scope, $route) {
 
 app.run(function ($rootScope, $location, $route, sessionInformationService, url, utils) {
     checkBrowser();
-    url.setUrls("localhost");   // to "online"
+    url.setUrls("localhost");   // to "localhost"
 
     // Load the facebook SDK asynchronously
     (function () {
@@ -237,7 +240,7 @@ app.run(function ($rootScope, $location, $route, sessionInformationService, url,
                 (!utils.checkValueExist(
                     ['/forgotPassword', '/Signup', '/home', '/tutorials', '/tutorial', '/games', '/game', '/workflows', '/workflow', '/portfolio'],
                         next.$$route.originalPath)))
-                $location.path("/home");
+                $location.path("/");
         }
     });
 
@@ -281,8 +284,10 @@ app.service('url', ['$location', function ($location) {
                 baseUrl = "http://localhost:8080/gamescrypt/GameCrib.Service";
                 serviceUrl = "http://localhost:8080/gamescrypt/GameCrib.Service";
             } else if (url == 'localserver') {
-                baseUrl = "http://localhost:8080/Service";
-                serviceUrl = "http://localhost:8080/Service";
+                //baseUrl = "http://localhost:8080/Service";
+                //serviceUrl = "http://localhost:8080/Service";
+                baseUrl = "http://gamescrypt.000webhostapp.com/GameCrib.Service";
+                serviceUrl = "http://gamescrypt.000webhostapp.com/GameCrib.Service";
             } else if (url == 'online') {
                 baseUrl = "https://gamescrypt.000webhostapp.com/GameCrib.Service";
                 serviceUrl = "https://gamescrypt.000webhostapp.com/GameCrib.Service";
