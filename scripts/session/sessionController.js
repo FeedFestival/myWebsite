@@ -47,27 +47,32 @@
         if ($localStorage.userId != null)
             $scope.app.loggingIn = false;
 
-        sessionFactory.setupApp().then(function (data) {
-            sessionInformationService.setSession(
-                {
-                    FacebookAppId: '1193283007398999',
-                    Apps: data
-                }
-            );
+        $timeout(function () {
 
-            menuFactory.refreshMenus();
+            sessionFactory.setupApp().then(function (data) {
+                sessionInformationService.setSession(
+                    {
+                        FacebookAppId: '1193283007398999',
+                        Apps: data
+                    }
+                );
 
-            $facebook.getLoginStatus().then(function (response) {
-                if (response.status === 'connected') {
-                    $scope.app.facebookConnected = true;
+                // we are prerendering menus for now, so no need for this.
+                //menuFactory.refreshMenus();
 
-                    if ($localStorage.userId != null)
-                        login();
-                } else {
-                    $scope.app.facebookConnected = false;
-                }
+                $facebook.getLoginStatus().then(function (response) {
+                    if (response.status === 'connected') {
+                        $scope.app.facebookConnected = true;
+
+                        if ($localStorage.userId != null)
+                            login();
+                    } else {
+                        $scope.app.facebookConnected = false;
+                    }
+                });
             });
-        });
+
+        }, 2000);
 
         $scope.loginWithFacebook = function () {
 

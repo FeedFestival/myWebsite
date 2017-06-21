@@ -10,20 +10,41 @@
     function menuController(
         $scope,
         menuFactory) {
-        
+
         $scope.navCollapsed = true;
+
+        $scope.menu = {
+            prerenderedMenus : [
+            { indx: 0 },
+            { indx: 1 },
+            { indx: 2 },
+            { indx: 3 },
+            { indx: 4 }
+            ]
+        };
 
         $scope.menus = [];
 
-        $scope.selectMenuItem = function (item) {
+        $scope.selectMenuItem = function (item, online) {
 
-            for (var i = 0; i < $scope.menus.length; i++) {
-                if ($scope.menus[i].id != item.id)
-                    $scope.menus[i].active = false;
-                else
-                    $scope.menus[i].active = true;
+            if (online) {
+                for (var i = 0; i < $scope.menus.length; i++) {
+                    if ($scope.menus[i].id != item.id)
+                        $scope.menus[i].active = false;
+                    else
+                        $scope.menus[i].active = true;
+                }
+
+                $scope.go('/' + item.URL);
+            } else {
+
+                for (var i = 0; i < $scope.menu.prerenderedMenus.length; i++) {
+                    if ($scope.menu.prerenderedMenus[i].indx != item.indx)
+                        $scope.menu.prerenderedMenus[i].active = false;
+                    else
+                        $scope.menu.prerenderedMenus[i].active = true;
+                }
             }
-            $scope.go('/' + item.URL);
         };
 
         $scope.$watch(

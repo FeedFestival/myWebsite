@@ -1,33 +1,59 @@
 ﻿<div class="menu-block"
+     ng-class="(menu.prerenderedMenus[0].active ? 'active' : '')">
+    <a class="btn"
+       href="#/tutorials"
+        ng-click="selectMenuItem(menu.prerenderedMenus[0]);">
+        <i class="fa fa-newspaper-o"></i>
+        <span>{{'txtTutorials' | translate}}</span>
+    </a>
+</div>
+
+<div class="menu-block"
+     ng-class="(menu.prerenderedMenus[1].active ? 'active' : '')">
+    <a class="btn"
+       href="#/workflows"
+       ng-click="selectMenuItem(menu.prerenderedMenus[1]);">
+        <i class="fa fa-map"></i>
+        <span>{{'txtWorkflow' | translate}}</span>
+    </a>
+</div>
+
+<div class="menu-block"
+     ng-class="(menu.prerenderedMenus[2].active ? 'active' : '')">
+    <a class="btn"
+       href="#/games"
+       ng-click="selectMenuItem(menu.prerenderedMenus[2]);">
+        <i class="fa fa-gamepad"></i>
+        <span>{{'txtGames' | translate}}</span>
+    </a>
+</div>
+
+<div class="menu-block"
+     ng-class="(menu.prerenderedMenus[3].active ? 'active' : '')">
+    <a class="btn"
+       href="#/portfolio"
+       ng-click="selectMenuItem(menu.prerenderedMenus[3]);">
+        <i class="fa fa-briefcase"></i>
+        <span>{{'txtPortfolio' | translate}}</span>
+    </a>
+</div>
+
+<div class="menu-block"
+     ng-class="(menu.prerenderedMenus[4].active ? 'active' : '')">
+    <a class="btn"
+       href="#/specter"
+       ng-click="selectMenuItem(menu.prerenderedMenus[4]);">
+        <i class="fa fa-briefcase"></i>
+        <span>{{'Spectre' | translate}}</span>
+    </a>
+</div>
+
+<!--<div class="menu-block"
      ng-class="(item.active ? 'active' : '')"
      ng-repeat="item in menus">
     <button class="btn"
-        ng-click="selectMenuItem(item);">
+            ng-click="selectMenuItem(item);">
         <i class="fa" ng-class="item.Icon"></i>
         <span>{{item.Name | translate}}</span>
-    </button>
-</div>
-
-<!--<div class="menu-block">
-    <button class="btn"
-        ng-click="go('/home')">
-        <i class="fa fa-home"></i>
-        <span>{{'txtNews' | translate}}</span>
-    </button>
-</div>
-
-<div class="menu-block">
-    <button class="btn"
-        ng-click="go('/tutorials')">
-        <i class="fa fa-map"></i>
-        <span>{{'txtTutorials' | translate}}</span>
-    </button>
-</div>
-
-<div class="menu-block">
-    <button class="btn"
-        ng-click="go('/games')">
-        <i class="fa fa-gamepad"></i>
-        <span>{{'txtGames' | translate}}</span>
     </button>
 </div>-->

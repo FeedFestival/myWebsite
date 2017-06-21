@@ -96,7 +96,7 @@ header {
 
 .menu-block.active {
 
-    > button {
+    > button, a {
         > i, span {
             color: #e46315 !important;
         }

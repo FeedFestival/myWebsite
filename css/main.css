@@ -76,7 +76,7 @@ header {
   text-align: center;
   padding-top: 21px; }
 
-.menu-block.active > button > i, .menu-block.active > button span {
+.menu-block.active > button > i, .menu-block.active > button span, .menu-block.active a > i, .menu-block.active a span {
   color: #e46315 !important; }
 
 .menu-block .btn {
