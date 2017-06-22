@@ -143,9 +143,12 @@
     <Content Include="scripts\menu\menuFactory.js" />
     <Content Include="scripts\portfolio\portfolio.html" />
     <Content Include="scripts\portfolio\portfolioController.js" />
+    <Content Include="scripts\profile\profile.html" />
+    <Content Include="scripts\profile\profileController.js" />
     <Content Include="scripts\services_directives\directives.js" />
     <Content Include="scripts\services_directives\paragraphQuestions.html" />
     <Content Include="scripts\services_directives\QaA.html" />
+    <Content Include="scripts\services_directives\run.js" />
     <Content Include="scripts\services_directives\services.js" />
     <Content Include="scripts\session\forgotPasswordPartial.html" />
     <Content Include="scripts\session\gameSessionController.js" />
