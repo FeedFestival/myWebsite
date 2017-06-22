@@ -1,5 +1,7 @@
 <?php
 	$dir = $_SERVER['DOCUMENT_ROOT']."/GameCrib.Service";
+	$dir = $_SERVER['DOCUMENT_ROOT']."/gamescrypt/GameCrib.Service";
+	
 	include($dir."/utils.php");
 	include($dir."/base.php");
 	include($dir."/DataAccess/user_dao.php");
@@ -44,10 +46,27 @@
 
 	// 5 => get the app -connected
 
+	// $result = TryQuerry($conn, $sql);
+	// if (mysqli_num_rows($result) > 0) {
+		// while($row = $result->fetch_assoc()) {
+			// $user{"current_app"} = FillApp($row, true);
+		// }
+	// }
 	
 	// 6 => get the user settings for this app
 
+	// $result = TryQuerry($conn, setting_getSettingsUnderParent($user['current_app']['setting']['id']));
+	// if (mysqli_num_rows($result) > 0) {
+		// $user['current_app']['setting']{'settings'} = array();
+		// while($row = $result->fetch_assoc()) {
 			
+			// array_push($user['current_app']['setting']['settings'], array(
+			    // 'settings' => FillSetting($row)
+			// ));
+		// }
+	// }
+	
+	
 	// 7 => get the user defined settings
 
 	// 8 => get friends
