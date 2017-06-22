@@ -44,25 +44,10 @@
 
 	// 5 => get the app -connected
 
-	$result = TryQuerry($conn, app_getApp($data['app_id'], $user_id));
-	if (mysqli_num_rows($result) > 0) {
-		while($row = $result->fetch_assoc()) {
-			$user{"current_app"} = FillApp($row, true);
-		}
-	}
 	
 	// 6 => get the user settings for this app
 
-	$result = TryQuerry($conn, setting_getSettingsUnderParent($user['current_app']['setting']['id']));
-	if (mysqli_num_rows($result) > 0) {
-		$user['current_app']['setting']{'settings'} = array();
-		while($row = $result->fetch_assoc()) {
 			
-			array_push($user['current_app']['setting']['settings'], array(
-			    'settings' => FillSetting($row)
-			));
-		}
-	}
 	// 7 => get the user defined settings
 
 	// 8 => get friends

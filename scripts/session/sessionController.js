@@ -36,7 +36,16 @@
             isPlayingGame: false,
             isLoggedIn: function () {
                 return $scope.loggedUser != undefined || $scope.loggedUser != null;
-            }
+            },
+            showLoginLoader: true,
+            loginLoader: function (val, text) {
+                this.showLoginLoader = val;
+                if (text) {
+                    var element = document.getElementById('login-loader');
+                    element.setAttribute('data-content', text);
+                }
+            },
+            profilePictureHovered: false
         };
 
         if ($localStorage.exitedGame) {
@@ -49,7 +58,12 @@
 
         $timeout(function () {
 
+            $scope.app.loginLoader(true, 'setup');
+
             sessionFactory.setupApp().then(function (data) {
+
+                $scope.app.loginLoader(true, 'logging in');
+
                 sessionInformationService.setSession(
                     {
                         FacebookAppId: '1193283007398999',
@@ -69,15 +83,22 @@
                     } else {
                         $scope.app.facebookConnected = false;
                     }
+                    $scope.app.loginLoader(false);
                 });
-            });
 
+                // close the loader if facebook takes too long.
+                $timeout(function () {
+                    $scope.app.loginLoader(false);
+                }, 5000);
+            });
         }, 2000);
 
         $scope.loginWithFacebook = function () {
 
             if ($scope.app.isLoggedIn())
                 return;
+
+            $scope.app.loginLoader(true, 'connecting');
 
             if ($scope.app.facebookConnected) {
                 login();
@@ -86,6 +107,12 @@
                 $facebook.login(permisions).then(function () {
                     login();
                 });
+
+                // close the loader if facebook takes too long.
+                $timeout(function () {
+                    if (!$scope.loggedUser)
+                    $scope.app.loginLoader(false);
+                }, 5000);
             }
         };
 
@@ -101,21 +128,34 @@
         };
 
         function phpLogin(facebookUniqueId) {
+
+            $scope.app.loginLoader(true, 'finding');
+
             userFactory.getUser(facebookUniqueId, sessionInformationService.getSession().id)
                 .then(function (response) {
 
                     if (response.Error == "USER_EXIST_NOT") {
+
+                        $scope.app.loginLoader(true, 'creating');
+
                         userFactory.createUser(sessionInformationService.getUser())
                             .then(function () {
                                 phpLogin(facebookUniqueId);
                             });
                     } else {
+
+                        $scope.app.loginLoader(true, 'logging in');
+
                         sessionFactory.login(response.id)
                             .then(function () {
                                 var x = response.id;
                                 $scope.loggedUser = sessionInformationService.getUser();
                                 $localStorage.userId = $scope.loggedUser.id;
-                                menuFactory.refreshMenus();
+
+                                // we are prerendering menus for now, so no need for this.
+                                //menuFactory.refreshMenus();
+
+                                $scope.app.loginLoader(false);
                             });
                     }
                 });

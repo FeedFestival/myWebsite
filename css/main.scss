@@ -1,3 +1,11 @@
+$orange: #e46315;
+$grey: #b6c8cd;
+$white: #aacabb;
+
+.orange {
+    color: $orange !important;
+}
+
 .header-container {
     position: relative;
     z-index: 4;
@@ -7,9 +15,9 @@
     background-repeat: no-repeat;
     border-width: 0 0 3px 0;
     border-style: solid;
-    -webkit-border-image: -webkit-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
-    -o-border-image: -o-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
-    -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
+    -webkit-border-image: -webkit-linear-gradient(left, transparent, $white, transparent) 100% 1;
+    -o-border-image: -o-linear-gradient(left, transparent, $white, transparent) 100% 1;
+    -moz-border-image: -moz-linear-gradient(left, transparent, $white, transparent) 100% 1;
     box-shadow: 0 4px 15px black;
 }
 
@@ -19,9 +27,9 @@ header {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     display: inline-block;
-    -webkit-border-image: -webkit-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
-    -o-border-image: -o-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
-    -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
+    -webkit-border-image: -webkit-linear-gradient(left, transparent, $white, transparent) 100% 1;
+    -o-border-image: -o-linear-gradient(left, transparent, $white, transparent) 100% 1;
+    -moz-border-image: -moz-linear-gradient(left, transparent, $white, transparent) 100% 1;
     box-shadow: 0 3px 30px black;
 
     .header-button {
@@ -98,20 +106,22 @@ header {
 
     > button, a {
         > i, span {
-            color: #e46315 !important;
+            color: $orange !important;
         }
     }
 }
 
 .menu-block {
     .btn {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: transparent;
     }
 }
 
 .menu-block .btn:hover,
 .menu-block .btn:focus {
-    background-color: rgba(0,0,0,0.45);
+    > i,span {
+            color: $orange !important;
+        }
 }
 
 
@@ -143,9 +153,9 @@ header {
     background-color: rgba(0,0,0,0.5);
     /**/
     border-top: 2px solid rgba(255,255,255,0.4);
-    -webkit-border-image: -webkit-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
-    -o-border-image: -o-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
-    -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
+    -webkit-border-image: -webkit-linear-gradient(left, transparent, $white, transparent) 100% 1;
+    -o-border-image: -o-linear-gradient(left, transparent, $white, transparent) 100% 1;
+    -moz-border-image: -moz-linear-gradient(left, transparent, $white, transparent) 100% 1;
     /**/
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
@@ -202,16 +212,16 @@ header {
     font-size: x-large;
     /**/
     border-bottom: 2px solid rgba(255,255,255,0.4);
-    -webkit-border-image: -webkit-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
-    -o-border-image: -o-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
-    -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
+    -webkit-border-image: -webkit-linear-gradient(left, transparent, $white, transparent) 100% 1;
+    -o-border-image: -o-linear-gradient(left, transparent, $white, transparent) 100% 1;
+    -moz-border-image: -moz-linear-gradient(left, transparent, $white, transparent) 100% 1;
 }
 
 .ref-line-top {
     border-top: 2px solid rgba(255,255,255,0.4);
-    -webkit-border-image: -webkit-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
-    -o-border-image: -o-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
-    -moz-border-image: -moz-linear-gradient(left, transparent, #aacabb, transparent) 100% 1;
+    -webkit-border-image: -webkit-linear-gradient(left, transparent, $white, transparent) 100% 1;
+    -o-border-image: -o-linear-gradient(left, transparent, $white, transparent) 100% 1;
+    -moz-border-image: -moz-linear-gradient(left, transparent, $white, transparent) 100% 1;
     /**/
     -moz-box-shadow: inset 0 8px 8px -8px black;
     -webkit-box-shadow: inset 0 8px 8px -8px black;
@@ -335,7 +345,7 @@ header {
     }
 
     .btn.p-answer {
-        color: #e46315;
+        color: $orange;
     }
 
     .btn:hover {
@@ -501,13 +511,17 @@ header {
 
 .header-login {
     > img {
-        border: 1px solid #aacabb;
+        border: 1px solid $white;
         padding: 0 !important;
+    }
+
+    > img.hovered {
+        border: 1px solid $orange;
     }
 
     > div {
         > label {
-            color: #b6c8cd;
+            color: $grey;
             margin: 0;
             line-height: 14px;
             padding-left: 10px;
@@ -521,6 +535,41 @@ header {
             height: 30px;
             padding: 0;
             text-align: center;
+
+            &:hover {
+                > i {
+                    color: $orange;
+                }
+            }
+        }
+
+        .btn-logout {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+
+            &:hover {
+                > i {
+                    color: $grey;
+                }
+            }
+
+            > i {
+                font-size: 28px;
+                color: $orange;
+            }
+        }
+
+        .btn-profile {
+            > i {
+                font-size: 24px;
+            }
+        }
+
+        .btn-profile.hovered {
+            > i {
+                color: $orange;
+            }
         }
     }
 }
@@ -550,4 +599,99 @@ header {
 
 .btn-steam i {
     font-size: 35px;
+}
+
+/* -------------- loader3 -------------- */
+
+.loader3 {
+    position: relative;
+    width: 150px;
+    height: 20px;
+    top: 45%;
+    top: -webkit-calc(50% - 10px);
+    top: calc(50% - 10px);
+    left: 25%;
+    left: -webkit-calc(50% - 75px);
+    left: calc(50% - 75px);
+}
+
+#login-loader {
+    left: -200px !important;
+}
+
+.loader3:after {
+    content: attr(data-content);
+    color: #fff;
+    font-family: Lato,"Helvetica Neue";
+    font-weight: 200;
+    font-size: 16px;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    left: 0;
+    top: 0;
+    background-color: $orange;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+.loader3:before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    top: -5px;
+    left: 0px;
+    height: 30px;
+    width: 0px;
+    z-index: 0;
+    opacity: 1;
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    -webkit-animation: loader3 10s ease-in-out infinite;
+    animation: loader3 10s ease-in-out infinite;
+}
+
+
+
+@-webkit-keyframes loader3 {
+    0% {
+        width: 0px;
+    }
+
+    70% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+        width: 100%;
+    }
+
+    100% {
+        opacity: 0;
+        width: 0px;
+    }
+}
+
+@keyframes loader3 {
+    0% {
+        width: 0px;
+    }
+
+    70% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+        width: 100%;
+    }
+
+    100% {
+        opacity: 0;
+        width: 0px;
+    }
 }

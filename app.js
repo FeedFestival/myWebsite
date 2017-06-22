@@ -289,8 +289,8 @@ app.service('url', ['$location', function ($location) {
                 baseUrl = "http://gamescrypt.000webhostapp.com/GameCrib.Service";
                 serviceUrl = "http://gamescrypt.000webhostapp.com/GameCrib.Service";
             } else if (url == 'online') {
-                baseUrl = "https://gamescrypt.000webhostapp.com/GameCrib.Service";
-                serviceUrl = "https://gamescrypt.000webhostapp.com/GameCrib.Service";
+                baseUrl = "gamescrypt.com/GameCrib.Service";
+                serviceUrl = "gamescrypt.com/GameCrib.Service";
             }
             else {
                 baseUrl = url;

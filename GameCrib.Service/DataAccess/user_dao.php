@@ -84,10 +84,9 @@
 					friend.name as friend_name
 				FROM friend
 					LEFT JOIN user as friend_user ON friend_user.id = friend.friend_id
-                    
-                    LEFT JOIN setting ON friend_user.setting_id = setting.parent_id
-                    
-					INNER JOIN type ON setting.type_id = type.id
+                    LEFT JOIN setting 
+                    	ON friend_user.setting_id = setting.parent_id
+                        	AND setting.type_id = (select type.id from type where type.prog_id = 'facebook_unique_id')
 				WHERE 
 					friend.user_id = ".$user_id."
 		";

@@ -86,3 +86,5 @@ $RECYCLE.BIN/
 obj/Debug/gameScrypt.dll
 *.pdb
 *.dll
+dist/scripts-debug.js
+dist/scripts.js

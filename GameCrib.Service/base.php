@@ -8,9 +8,9 @@
 session_start();
 
 $servername = "localhost";
-$username = "id1570128_simionescudani07"; // "root"
-$password = "fire4test"; // ""
-$dbName = "id1570128_game_crib"; // "game_crib"
+$username = "root"; // "root"
+$password = ""; // ""
+$dbName = "game_crib"; // "game_crib"
 
 // Make Connection
 $conn = new mysqli($servername, $username, $password, $dbName);
@@ -19,8 +19,8 @@ $conn = new mysqli($servername, $username, $password, $dbName);
 if (!$conn){
     die("Connection Failed. ". mysqli_connect_error());
 }
-// header("Pragma: no-cache");
-// header("Cache-Control: no-cache")
+header("pragma: no-cache");
+header("cache-control: no-cache");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");

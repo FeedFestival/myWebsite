@@ -21,13 +21,13 @@ gulp.task('concat-libs',
     function () {
         return gulp.src([
             'js/jquery-1.12.3.min.js',
-            'js/angular/angular.js',
+            'js/angular/angular.min.js',    // experimental
             'js/angular/angular-route.min.js',
             'js/ngFacebook.js',
             'js/angular/angular-translate.min.js',
             'js/angular/angular-translate-loader-static-files.min.js',
             'js/ui-bootstrap-tpls-1.3.2.min.js',
-            'js/angular/ngStorage.js'
+            'js/angular/ngStorage.min.js'   // experimental
         ])
             .pipe(concat('libs.js'))
             .pipe(gulp.dest('dist'))

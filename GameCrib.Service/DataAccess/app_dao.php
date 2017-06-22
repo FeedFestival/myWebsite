@@ -50,18 +50,23 @@
 	function app_getApp($app_id, $user_id = 0){
 		$s = "	SELECT 
 					app.id, app.name";
-		if ($user_id > 0)
+		if ($user_id > 0) {
 			$s .= " , user_con_app.id as connect_id
                     , user_con_app.setting_id
                     , user_con_app.settings_json";
+		}
+		
 		$s .= "	FROM app ";
-		if ($user_id > 0)
+		
+		if ($user_id > 0) {
 			$s .= "
 				INNER JOIN user_con_app ON user_con_app.app_id = app.id
                     		AND user_con_app.user_id = ".$user_id."
 			";
-		$s .= "WHERE app.id = ".sqlNr($app_id);
-
+		}
+		$s .= "
+			WHERE app.id = ".sqlString($app_id)."";
+		
 		return $s;
 	}
 
